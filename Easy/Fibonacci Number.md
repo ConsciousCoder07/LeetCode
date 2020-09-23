@@ -38,12 +38,10 @@ public:
 ```py
 class Solution:
     def fib(self, N: int) -> int:
-        fib = [0,1]
-        if N == 0:
-            return 0;
-        elif N == 1:
-            return 1
-        for i in range(2, N+1):
-            fib.append(fib[-1]+fib[-2])
-        return fib[-1]
+        a, b, f = 0, 1, 0
+        if N < 2: 
+            return N
+        for i in range(2,N+1):
+            a, b = b, a+b     
+        return b         
 ```
